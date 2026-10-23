@@ -12,43 +12,82 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css?v=3">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body>
+  <!-- 번짐/거친 테두리 효과용 필터 -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="3"/>
+      <feDisplacementMap in="SourceGraphic" scale="4"/>
+    </filter>
+    <filter id="bleed">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="7"/>
+      <feDisplacementMap in="SourceGraphic" scale="18"/>
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+  </svg>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#top"><img src="assets/logo.png" alt="Narin Studio" width="2000" height="1167"></a>
+      <a class="logo" href="#top"><img src="assets/logo.png" alt="Narin Studio"></a>
       <nav class="nav">
-        <a href="#about" data-i18n="nav.about">소개</a>
-        <a href="#games" data-i18n="nav.games">게임</a>
-        <a href="#contact" data-i18n="nav.contact">연락처</a>
+        <a class="nav-link" href="#about" data-i18n="nav.about">소개</a>
+        <a class="nav-link" href="#games" data-i18n="nav.games">게임</a>
+        <a class="nav-link" href="#contact" data-i18n="nav.contact">연락처</a>
         <button class="lang-toggle" type="button" aria-label="Change language">EN</button>
+        <a class="nav-cta" href="#contact" data-i18n="hero.cta">문의하기</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="container">
-        <img class="hero-logo" src="assets/logo.png" alt="Narin Studio" width="2000" height="1167">
-        <p class="eyebrow" data-i18n="hero.eyebrow">게임 개발 스튜디오</p>
-        <h1 data-i18n="hero.title">흩어진 생각을 모아<br>게임으로 내립니다.</h1>
-        <!-- 메인 문구 아래 설명 문장 자리: 문장이 정해지면 <p class="lead" data-i18n="hero.lead">…</p>를 넣고 main.js에 hero.lead를 추가합니다 -->
-        <a class="button" href="#contact" data-i18n="hero.cta">문의하기</a>
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <img class="hero-logo" src="assets/logo.png" alt="Narin Studio">
+          <p class="eyebrow" data-i18n="hero.eyebrow">게임 개발 스튜디오</p>
+        </div>
+        <h1 class="hero-title" data-i18n="hero.title">흩어진 생각을 모아<br>게임으로 내립니다.</h1>
       </div>
+
+      <svg class="mountains" viewBox="0 0 1440 360" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2a2622" stop-opacity="0.22"/>
+            <stop offset="1" stop-color="#2a2622" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1d1a16" stop-opacity="0.42"/>
+            <stop offset="0.8" stop-color="#1d1a16" stop-opacity="0.04"/>
+          </linearGradient>
+          <linearGradient id="m3" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#14110e" stop-opacity="0.75"/>
+            <stop offset="0.9" stop-color="#14110e" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+        <g filter="url(#bleed)">
+          <path fill="url(#m1)" d="M0 210 C120 150 200 120 300 160 S470 90 560 120 S720 60 820 110 S980 150 1060 100 S1260 70 1440 140 L1440 360 L0 360Z"/>
+          <path fill="url(#m2)" d="M0 260 C90 230 160 190 250 220 S380 170 470 210 S640 250 720 200 S860 150 960 210 S1150 240 1240 200 S1380 210 1440 230 L1440 360 L0 360Z"/>
+          <path fill="url(#m3)" d="M0 320 C140 290 220 270 330 300 S520 260 640 300 S820 330 930 290 S1120 280 1230 310 S1380 300 1440 315 L1440 360 L0 360Z"/>
+        </g>
+      </svg>
+      <div class="mist" aria-hidden="true"></div>
     </section>
 
-    <section id="about" class="section">
+    <section id="about" class="section reveal">
       <div class="container narrow">
-        <h2 data-i18n="about.title">소개</h2>
+        <div class="section-head"><span class="num">壹</span><h2 data-i18n="about.title">소개</h2></div>
         <p data-i18n="about.body">나린 스튜디오는 성남 판교에 자리한 게임 개발 스튜디오입니다. 작지만 단단한 팀으로, 오래도록 즐길 수 있는 게임을 만드는 것을 목표로 합니다.</p>
       </div>
     </section>
 
-    <section id="games" class="section alt">
+    <div class="brush-line" aria-hidden="true"></div>
+
+    <section id="games" class="section reveal">
       <div class="container narrow">
-        <h2 data-i18n="games.title">게임</h2>
+        <div class="section-head"><span class="num">貳</span><h2 data-i18n="games.title">게임</h2></div>
         <div class="card">
           <span class="badge" data-i18n="games.badge">개발 중</span>
           <p data-i18n="games.body">첫 번째 게임을 준비하고 있습니다. 곧 소식을 전해드릴게요.</p>
@@ -56,9 +95,11 @@
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <div class="brush-line flip" aria-hidden="true"></div>
+
+    <section id="contact" class="section reveal">
       <div class="container narrow">
-        <h2 data-i18n="contact.title">연락처</h2>
+        <div class="section-head"><span class="num">參</span><h2 data-i18n="contact.title">연락처</h2></div>
         <dl class="contact-list">
           <div>
             <dt data-i18n="contact.email">이메일</dt>
@@ -82,6 +123,13 @@
     </div>
   </footer>
 
-  <script src="assets/main.js?v=3"></script>
+  <script src="assets/main.js?v=4"></script>
+  <script>
+    // 스크롤하면 먹이 번지듯 나타나는 효과
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.2 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+  </script>
 </body>
 </html>
