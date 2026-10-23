@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>나린 스튜디오 | Narin Studio</title>
+  <meta name="description" content="나린 스튜디오는 게임을 만드는 개발 스튜디오입니다. Narin Studio is a game development studio.">
+  <meta property="og:title" content="Narin Studio">
+  <meta property="og:description" content="게임 개발 스튜디오 · Game Development Studio">
+  <meta property="og:url" content="https://narinstudio.github.io/">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- 로고 파일을 받으면 이 글자 로고를 <img src="assets/logo.png" alt="Narin Studio">로 바꿉니다 -->
+      <a class="logo" href="#top" data-i18n="brand">나린 스튜디오</a>
+      <nav class="nav">
+        <a href="#about" data-i18n="nav.about">소개</a>
+        <a href="#games" data-i18n="nav.games">게임</a>
+        <a href="#contact" data-i18n="nav.contact">연락처</a>
+        <button class="lang-toggle" type="button" aria-label="Change language">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow" data-i18n="hero.eyebrow">게임 개발 스튜디오</p>
+        <!-- 임시 문구: 메인 문구가 정해지면 여기와 assets/main.js의 hero.title을 바꿉니다 -->
+        <h1 data-i18n="hero.title">오래 기억에 남는<br>게임을 만듭니다</h1>
+        <p class="lead" data-i18n="hero.lead">나린 스튜디오는 플레이어에게 즐거운 경험을 선물하는 게임을 만들고 있습니다.</p>
+        <a class="button" href="#contact" data-i18n="hero.cta">문의하기</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container narrow">
+        <h2 data-i18n="about.title">소개</h2>
+        <p data-i18n="about.body">나린 스튜디오는 성남 판교에 자리한 게임 개발 스튜디오입니다. 작지만 단단한 팀으로, 오래도록 즐길 수 있는 게임을 만드는 것을 목표로 합니다.</p>
+      </div>
+    </section>
+
+    <section id="games" class="section alt">
+      <div class="container narrow">
+        <h2 data-i18n="games.title">게임</h2>
+        <div class="card">
+          <span class="badge" data-i18n="games.badge">개발 중</span>
+          <p data-i18n="games.body">첫 번째 게임을 준비하고 있습니다. 곧 소식을 전해드릴게요.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container narrow">
+        <h2 data-i18n="contact.title">연락처</h2>
+        <dl class="contact-list">
+          <div>
+            <dt data-i18n="contact.email">이메일</dt>
+            <dd><a href="mailto:contact.narinstudio@gmail.com">contact.narinstudio@gmail.com</a></dd>
+          </div>
+          <div>
+            <dt data-i18n="contact.address">주소</dt>
+            <dd>
+              <span data-i18n="contact.addressValue">경기 성남시 수정구 창업로 54 (기업성장센터 923호)</span>
+              <a class="map-link" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EC%84%B1%EB%82%A8%EC%8B%9C%20%EC%88%98%EC%A0%95%EA%B5%AC%20%EC%B0%BD%EC%97%85%EB%A1%9C%2054" target="_blank" rel="noopener" data-i18n="contact.map">지도 보기</a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> <span data-i18n="brand">나린 스튜디오</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>
